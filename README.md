@@ -1,4 +1,4 @@
-##### PexelsPlashBot
+##### InvoiceApp
 
 I have created cross-platform electron desktop app for generate Invoice feel free to contribute.
 
