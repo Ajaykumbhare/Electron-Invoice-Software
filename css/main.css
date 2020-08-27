@@ -1,0 +1,55 @@
+html,
+body {
+  padding: 2%;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #525252;
+  background: radial-gradient(circle, #667eea 0%, #764ba2 100%);
+}
+
+a {
+  text-decoration: none;
+  color: #cb3837;
+}
+
+.container {
+  background: #ffffff;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05) !important;
+  margin-top: 30px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+textarea,
+select {
+  padding: 5px 2px !important;
+}
+
+input[type="button"],
+input[type="submit"] {
+  width: 120px;
+  font-weight: bold;
+  display: inline-block;
+  background: #4285f4 !important;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 20px 30px;
+  border-radius: 5px;
+  box-shadow: 0px 17px 10px -10px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  transition: all ease-in-out 300ms;
+}
+
+input[type="button"]:hover {
+  box-shadow: 0px 37px 20px -20px rgba(0, 0, 0, 0.2);
+  transform: translate(0px, -1px) scale(1.1);
+}

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Nelco Motor Works</title>
+    <link rel="stylesheet" href="../css/bootstrap.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <script
+      src="../js/jquery.min.js"
+      onload="window.$ = window.jQuery = module.exports;"
+    ></script>
+  </head>
+  <body>
+    <div class="app">
+      <div>
+        <span>Name</span>
+        <input type="text" id="name" />
+      </div>
+
+      <div>
+        <span>Address</span>
+        <textarea id="address"></textarea>
+      </div>
+
+      <div>
+        <span>GSTIN No.</span>
+        <input type="text" id="gstno" />
+      </div>
+    </div>
+
+    <div class="app">
+      <div>
+        <span>Reverse Charge</span>
+        <input type="text" id="rcharge" />
+      </div>
+
+      <div>
+        <span>Challean No.</span>
+        <input type="text" id="cno" />
+      </div>
+
+      <div>
+        <span>Invoice No.</span>
+        <input type="text" id="ino" />
+      </div>
+
+      <div>
+        <span>Mode of Transport</span>
+        <input type="text" id="mtransport" />
+      </div>
+
+      <div>
+        <span>Vehicle No</span>
+        <input type="text" id="vno" />
+      </div>
+
+      <div>
+        <span>Date of Supply</span>
+        <input type="date" id="dsupply" />
+      </div>
+
+      <div>
+        <span>Place of Supply</span>
+        <input type="text" id="psupply" />
+      </div>
+    </div>
+
+    <div class="app">
+      <div>
+        <span>H.P.</span>
+        <input type="text" id="hp" />
+      </div>
+
+      <div>
+        <span>R.P.M.</span>
+        <input type="text" id="rpm" />
+      </div>
+
+      <div>
+        <span>K.W.</span>
+        <input type="text" id="kw" />
+      </div>
+
+      <div>
+        <span>M/C. No</span>
+        <input type="text" id="mcno" />
+      </div>
+    </div>
+
+    <div class="app">
+      <div>
+        <span>HSN Code</span>
+        <input type="text" id="hsncode" />
+      </div>
+
+      <div>
+        <span>Quantity</span>
+        <input type="text" id="qty" />
+      </div>
+
+      <div>
+        <span>Rate</span>
+        <input type="text" id="rate" />
+      </div>
+    </div>
+
+    <div>
+      <div></div>
+    </div>
+
+    <div style="text-align: right; margin-right: 17px">
+      <div>
+        <input type="button" id="print" value="Print" />
+      </div>
+    </div>
+  </body>
+</html>
+
+<style>
+  .app > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .app > * {
+    margin: 10px;
+  }
+
+  .app > div > *:nth-child(2) {
+    border: 2px solid #888;
+    border-radius: 2px;
+    padding: 4px;
+  }
+
+  .app {
+    padding: 10px 20px;
+    background: white;
+    border-radius: 5px;
+    width: 600px;
+    position: relative;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.1) inset;
+  }
+
+  .app::before,
+  .app::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    top: 10px;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    -moz-border-radius: 100px / 10px;
+    border-radius: 100px / 10px;
+  }
+
+  .app::after {
+    right: 10px;
+    left: auto;
+    -webkit-transform: skew(8deg) rotate(3deg);
+    -moz-transform: skew(8deg) rotate(3deg);
+    -ms-transform: skew(8deg) rotate(3deg);
+    -o-transform: skew(8deg) rotate(3deg);
+    transform: skew(8deg) rotate(3deg);
+  }
+
+  #DroidBot {
+    font-size: 24px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  input[type="button"] {
+    padding: 5px 10px;
+    background: white;
+    /* border: 2px solid black; */
+    border: none;
+
+    border-radius: 3px;
+    /* color: #21a1e1; */
+  }
+</style>
+
+<script>
+  const print = document.querySelector("#print");
+  const { BrowserWindow } = require("electron").remote;
+  const converter = require("number-to-words");
+  const fs = require("fs");
+
+  const setValue = () => {
+    localStorage.setItem(
+      "name",
+      document
+        .querySelector("#name")
+        .value.replace(/\b\w/g, (l) => l.toUpperCase())
+    );
+    localStorage.setItem("address", document.querySelector("#address").value);
+    localStorage.setItem("gstno", document.querySelector("#gstno").value);
+    localStorage.setItem("rcharge", document.querySelector("#rcharge").value);
+    localStorage.setItem("cno", document.querySelector("#cno").value);
+    localStorage.setItem("idate", new Date().toLocaleDateString());
+    localStorage.setItem("ino", document.querySelector("#ino").value);
+    localStorage.setItem(
+      "mtransport",
+      document.querySelector("#mtransport").value
+    );
+    localStorage.setItem("vno", document.querySelector("#vno").value);
+    localStorage.setItem("dsupply", document.querySelector("#dsupply").value);
+    localStorage.setItem("psupply", document.querySelector("#psupply").value);
+    localStorage.setItem("hp", document.querySelector("#hp").value);
+    localStorage.setItem("rpm", document.querySelector("#rpm").value);
+    localStorage.setItem("kw", document.querySelector("#kw").value);
+    localStorage.setItem("mcno", document.querySelector("#mcno").value);
+    localStorage.setItem("hsncode", document.querySelector("#hsncode").value);
+    localStorage.setItem("qty", document.querySelector("#qty").value);
+    localStorage.setItem("rate", document.querySelector("#rate").value);
+    localStorage.setItem(
+      "amount",
+      Number(
+        Number(localStorage.getItem("qty")) *
+          Number(localStorage.getItem("rate"))
+      ).toFixed(2)
+    );
+    localStorage.setItem(
+      "before_tax_amt",
+      Number(
+        Number(localStorage.getItem("qty")) *
+          Number(localStorage.getItem("rate"))
+      ).toFixed(2)
+    );
+    localStorage.setItem(
+      "cgst",
+      Number(Number(localStorage.getItem("before_tax_amt")) * 0.09).toFixed(2)
+    );
+    localStorage.setItem(
+      "sgst",
+      Number(Number(localStorage.getItem("before_tax_amt")) * 0.09).toFixed(2)
+    );
+    localStorage.setItem(
+      "tamtgst",
+      Number(
+        Number(localStorage.getItem("cgst")) +
+          Number(localStorage.getItem("sgst"))
+      ).toFixed(2)
+    );
+    localStorage.setItem(
+      "tamt_after_tax",
+      Number(
+        Number(localStorage.getItem("tamtgst")) +
+          Number(localStorage.getItem("before_tax_amt"))
+      ).toFixed(2)
+    );
+    localStorage.setItem(
+      "amt_in_words",
+      `${converter.toWords(localStorage.getItem("tamt_after_tax"))} Ruppes Only`
+    );
+  };
+
+  print.addEventListener("click", () => {
+    setValue();
+    let win = new BrowserWindow({ width: 800, height: 600 });
+    win.loadURL(`file://${__dirname}/preview.html`);
+
+    win.webContents.on("did-finish-load", () => {
+      // Use default printing options
+      win.webContents.printToPDF(
+        { printBackground: true, landscape: true },
+        (error, data) => {
+          if (error) throw error;
+          fs.writeFile(`c://prints/${localStorage.ino}.pdf`, data, (error) => {
+            if (error) throw error;
+            console.log("Write PDF successfully.");
+            console.log(localStorage.ino);
+          });
+        }
+      );
+    });
+  });
+</script>

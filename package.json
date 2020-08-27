@@ -1,0 +1,20 @@
+{
+  "name": "nmw",
+  "version": "1.0.0",
+  "description": "nmw Billing app",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron . index.js",
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --prune=true --out=release-builds",
+    "package-win": "electron-packager . nmw --overwrite --asar --platform=win32 --arch=ia32 --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"NMW\"",
+    "package-linux": "electron-packager . nmw --overwrite --asar=true --platform=linux --arch=x64 --prune=true --out=release-builds"
+  },
+  "author": "ajaycod",
+  "license": "ISC",
+  "dependencies": {
+    "number-to-words": "^1.2.4"
+  },
+  "devDependencies": {
+    "electron": "^6.0.7"
+  }
+}

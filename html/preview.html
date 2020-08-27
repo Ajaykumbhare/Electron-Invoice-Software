@@ -1,0 +1,620 @@
+<html>
+  <html>
+    <head>
+      <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <title>Invoice</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+    </head>
+    <body>
+      <div class="main">
+        <div class="top">
+          <div class="heading_top">
+            <div class="heading_top_first">
+              <div>
+                <span>GSTIN NO. 24BWEPM2728J1ZH</span>
+              </div>
+              <div>
+                <span>TAX INVOICE</span>
+              </div>
+              <div>
+                <div class="contact_no">
+                  <span>(M) 98255 05566</span>
+                  <span>84691 11144</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="heading_top_second">
+              <div class="heading_middle">
+                <div>
+                  <img src="../img/nmw.png" style="height: 100px" />
+                </div>
+
+                <div class="heading_middle_middle">
+                  <div>
+                    <div>
+                      <span
+                        style="
+                          font-size: 60px;
+                          font-weight: bold;
+                          font-family: 'Courier New', Courier, monospace;
+                        "
+                      >
+                        NELCO
+                      </span>
+                      <span style="font-size: 50px">Motor Works</span>
+                    </div>
+                  </div>
+
+                  <div style="background: black; padding: 5px">
+                    <span style="color: white; font-weight: bold"
+                      >Manufactures of All Kinds of A.C. Electric Induction
+                      Motors & Water Pump</span
+                    >
+                  </div>
+
+                  <div
+                    style="
+                      padding-top: 5px;
+                      text-align: right;
+                      width: 350px;
+                      float: right;
+                    "
+                  >
+                    <span style="font-weight: bold"
+                      >Plot No. 179, Block No. 19, V.M. Dhamanwala, Industrial
+                      Estate, Unn, Surat.</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="middle">
+          <div class="middle_first">
+            <div style="text-align: center">
+              <span style="font-weight: bold">Details of Receiver</span>
+            </div>
+            <div class="bill_name">
+              <div>
+                <span>Bill To, Name </span>
+              </div>
+              <div class="nameDiv">
+                <span id="name"></span>
+              </div>
+            </div>
+            <br />
+
+            <div class="add_name">
+              <div>
+                <span>Add.</span>
+              </div>
+              <div class="addDiv">
+                <span id="address"></span>
+              </div>
+            </div>
+
+            <div class="STATE_name" style="margin-top: 10px">
+              <div>
+                <span>State : GUJARAT</span>
+              </div>
+              <div>
+                <span>STATE CODE : 24</span>
+              </div>
+            </div>
+            <br />
+
+            <div class="add_name">
+              <div>
+                <span>GSTIN No.</span>
+              </div>
+              <div class="gstDiv">
+                <span id="gstno"></span>
+              </div>
+            </div>
+          </div>
+          <div class="middle_second">
+            <div>
+              <span>Reverse Charge : </span>
+              <span id="rcharge"> </span>
+            </div>
+            <div>
+              <span>Challean No : </span>
+              <span id="cno"> </span>
+            </div>
+            <div>
+              <span>Invoice No : </span>
+              <span id="ino"> </span>
+            </div>
+            <div>
+              <span>Invoice Date : </span>
+              <span id="idate"> </span>
+            </div>
+            <div>
+              <span>State GUJARAT</span>
+            </div>
+            <div>
+              <span>Mode of Transport : </span>
+              <span id="mtransport"> </span>
+            </div>
+            <div>
+              <span>Veh. No. : </span>
+              <span id="vno"> </span>
+            </div>
+            <div>
+              <span>Date of Supply : </span>
+              <span id="dsupply"></span>
+            </div>
+            <div>
+              <span>Place of Supply : </span>
+              <span id="psupply"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="last-first">
+          <table>
+            <tr class="five">
+              <th>Description of Goods</th>
+              <th>HSN Code</th>
+              <th>QNTY.</th>
+              <th>Rate</th>
+              <th>Amount</th>
+            </tr>
+
+            <tr class="five">
+              <td>
+                <div>
+                  <span>To Supply of NELCO Electric Induction Motors</span>
+                </div>
+                <div>
+                  <span
+                    >H.P.<span id="hp"></span>R.P.M.<span id="rpm"></span
+                    >K.W.<span id="kw"></span
+                  ></span>
+                </div>
+                <div>
+                  <span>Design : "NELCO"</span>
+                </div>
+                <div>
+                  <span>Cycle : 50 PHASE : </span>
+                </div>
+                <div>
+                  <span>A.C. Volts : </span>
+                </div>
+                <div>
+                  <span>M/c. No. <span id="mcno"></span> </span>
+                </div>
+              </td>
+              <td>
+                <span
+                  style="font-weight: bold; font-size: 15px"
+                  id="hsncode"
+                ></span>
+              </td>
+              <td>
+                <span
+                  style="font-weight: bold; font-size: 15px"
+                  id="qty"
+                ></span>
+              </td>
+              <td>
+                <span
+                  style="font-weight: bold; font-size: 15px"
+                  id="rate"
+                ></span>
+              </td>
+              <td>
+                <span
+                  style="font-weight: bold; font-size: 15px"
+                  id="amount"
+                ></span>
+              </td>
+            </tr>
+            <tr class="three">
+              <td
+                style="
+                  padding-top: 27px;
+                  border-bottom: none;
+                  padding-bottom: 0;
+                "
+              >
+                <span> Total Invoice Amount in Words : </span
+                ><span
+                  style="font-weight: bold; font-size: 14px"
+                  id="amt_in_words"
+                ></span>
+              </td>
+              <td>
+                <span>Total Amount Before Tax Rs.</span>
+              </td>
+              <td>
+                <span id="before_tax_amt"></span>
+              </td>
+            </tr>
+
+            <tr class="three">
+              <td style="border-top: none"></td>
+              <td>
+                <span>ADD CGST @ 9% on</span>
+              </td>
+              <td>
+                <span id="cgst"></span>
+              </td>
+            </tr>
+
+            <tr class="three">
+              <td style="border-bottom: none">
+                <span>Bank Name : INDUSIND BANK</span>
+              </td>
+              <td>
+                <span>ADD SGST @ 9% on</span>
+              </td>
+              <td>
+                <span id="sgst"></span>
+              </td>
+            </tr>
+
+            <tr class="three">
+              <td style="border-bottom: none; border-top: none">
+                <span>Bank Account No. : 201003273389</span>
+              </td>
+              <td>
+                <span>ADD IGST @ on</span>
+              </td>
+              <td>
+                <span id="igst">-</span>
+              </td>
+            </tr>
+
+            <tr class="three">
+              <td style="border-bottom: none; border-top: none">
+                <span
+                  >Branch : G-2, Empire State Building, Ring Road, Near Udhna
+                  Darwaja, Surat.</span
+                >
+              </td>
+              <td>
+                <span>Total Amount : GST</span>
+              </td>
+              <td>
+                <span id="tamtgst"></span>
+              </td>
+            </tr>
+
+            <tr class="three">
+              <td style="border-top: none">
+                <span>IFSC Code : INDB0000023</span>
+              </td>
+              <td>
+                <span>Total Amount After Tax:</span>
+              </td>
+              <td>
+                <span id="tamt_after_tax"></span>
+              </td>
+            </tr>
+
+            <tr class="three">
+              <td style="padding-top: 12px">
+                <span style="font-weight: bold">Terms & Condition</span>
+              </td>
+              <td>
+                <span>GST Payble on Reverse Charge</span>
+              </td>
+              <td>
+                <span id="gst_payble"></span>
+              </td>
+            </tr>
+
+            <tr class="three_terms">
+              <td>
+                <span
+                  >(1) Delivery under this sale can not be enforced. <br />(2)
+                  Goods once sold will not be accepted back. <br />(3) Out risk
+                  and responsibilities ceases no sooner the goods leave our
+                  premises. <br />(4) Disputes Exgodown if not otherwise stated.
+                  <br />(5) Payment cash on demand.<br />
+                  (6) Sales Taxes another, local tax will be charged extra
+                  whenever and wherever applicable.<br />
+                  (7) Price Rulling at the time of delivery will be applicable.
+                  <br />(8) Disputes will be settled in Surat court only.</span
+                >
+              </td>
+              <td colspan="2" style="text-align: center; padding-top: 13px">
+                <span style="font-size: 15px; font-weight: bold"
+                  >FOR, NELCO MOTOR WORKS</span
+                >
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <span style="font-size: 15px; font-weight: bold"
+                  >Authorised Signatory</span
+                >
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </body>
+  </html>
+
+  <style>
+    .main {
+      border: 4px solid black;
+      background: #ddd;
+      padding: 10px;
+      width: 21cm;
+      height: 29.7cm;
+
+      margin: 0;
+      box-shadow: 0;
+    }
+
+    .heading_top {
+      background: white;
+      padding: 8px;
+      border-radius: 5px;
+      border: 2px solid black;
+    }
+    .heading_top_first {
+      text-align: center;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      font-weight: bold;
+    }
+
+    .middle_first,
+    .middle_second {
+      background: white;
+      padding: 10px;
+      border-radius: 5px;
+      border: 2px solid black;
+      margin-top: 10px;
+    }
+
+    .middle_first span {
+      line-height: 1.5;
+    }
+
+    .middle_second span {
+      line-height: 1.5;
+    }
+
+    .middle_second > div {
+      display: grid;
+      grid-template-columns: 1fr 0.7fr;
+      word-break: break-all;
+    }
+
+    .middle {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      grid-gap: 3px;
+      font-weight: bold;
+      padding: 0;
+    }
+
+    .heading_middle_middle {
+      grid-template-rows: 2fr 1fr;
+    }
+
+    .heading_middle {
+      margin-left: 0;
+      margin-right: 0;
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+    }
+
+    img {
+      border-radius: 10px;
+    }
+
+    .contact_no {
+      text-align: right;
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+
+    hr {
+      border: 0;
+      height: 2px;
+      background: black;
+      margin-top: 20px;
+    }
+
+    .bill_name,
+    .add_name {
+      display: grid;
+      grid-template-columns: 1fr 4fr;
+      grid-gap: 5px;
+    }
+
+    .STATE_name {
+      display: grid;
+      grid-template-columns: 2fr 2fr;
+    }
+
+    .last-first {
+      background: white;
+      padding: 10px;
+      border-radius: 5px;
+      border: 2px solid black;
+      margin-top: 10px;
+    }
+    .divTableRow {
+      display: grid;
+      grid-template-columns: 5fr 1fr 1fr 1fr 1fr;
+    }
+
+    .below_table {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+    }
+
+    .below_table_first {
+      display: grid;
+      grid-template-rows: 1fr 2fr 2fr;
+    }
+
+    .GST_PAYMENT {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    table {
+      border-collapse: collapse;
+    }
+
+    table,
+    th,
+    td {
+      padding: 5px;
+      border: 1px solid black;
+    }
+
+    tr.five td {
+      line-height: 2;
+    }
+    tr.five {
+      display: grid;
+      grid-template-columns: 5fr 1fr 1fr 1fr 1fr;
+    }
+
+    tr.three {
+      display: grid;
+      grid-template-columns: 3fr 1fr 1fr;
+    }
+
+    tr.three_terms {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+    }
+
+    td {
+      font-size: 12px;
+    }
+
+    @page {
+      size: A4;
+      margin: 0;
+      box-shadow: 0;
+    }
+
+    @media print {
+      html,
+      body {
+        width: 21cm;
+        height: 29.7cm;
+        margin: 0;
+        box-shadow: 0;
+      }
+      /* ... the rest of the rules ... */
+    }
+
+    /* DivTable.com */
+    .divTable {
+      display: table;
+      width: 100%;
+    }
+    .divTableRow {
+      display: table-row;
+    }
+    .divTableHeading {
+      background-color: #eee;
+      display: table-header-group;
+    }
+    .divTableCell,
+    .divTableHead {
+      border: 1px solid #999999;
+      display: table-cell;
+      padding: 3px 10px;
+    }
+    .divTableHeading {
+      background-color: #eee;
+      display: table-header-group;
+      font-weight: bold;
+    }
+    .divTableFoot {
+      background-color: #eee;
+      display: table-footer-group;
+      font-weight: bold;
+    }
+    .divTableBody {
+      display: table-row-group;
+    }
+
+    .nameDiv,
+    .addDiv,
+    .addDiv2,
+    .gstDiv,
+    #hp,
+    #rpm,
+    #kw,
+    #mcno {
+      position: relative;
+    }
+
+    #hp,
+    #rpm,
+    #kw,
+    #mcno {
+      display: inline-block;
+      width: 40px;
+      text-align: center;
+      font-weight: bold;
+      line-height: 1.9;
+      background: -webkit-linear-gradient(bottom, black 2%, white 9%) 0 56px;
+      background-size: 100% 30px;
+      white-space: pre-line;
+    }
+
+    #amt_in_words {
+      text-transform: capitalize;
+    }
+
+    .five span,
+    .three span {
+      font-size: 14px;
+    }
+
+    .three_terms span {
+      font-size: 13px;
+    }
+
+    #name,
+    #address,
+    #gstno {
+      line-height: 1.9;
+      background: -webkit-linear-gradient(bottom, black 2%, white 9%) 0 56px;
+      background-size: 100% 30px;
+      white-space: pre-line;
+      display: block;
+    }
+
+    .top {
+      margin-top: 15px;
+    }
+  </style>
+
+  <script>
+    Object.keys(localStorage).map((x) => {
+      try {
+        document.querySelector(`#${x}`).innerText = localStorage.getItem(x);
+      } catch (e) {
+        console.log(e);
+        console.log(x);
+      }
+    });
+
+    setTimeout(() => {
+      alert("PDF Saved in c://prints/ Folder");
+    }, 1000);
+  </script>
+</html>
